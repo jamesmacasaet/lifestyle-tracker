@@ -1,0 +1,73 @@
+Welcome to Choob's Lifestyle Tracker!
+Added Food ChickenMeal with 739.00 kcal
+Added Food Cereal with 130.00 kcal
+Added Food Ensaymada with 410.00 kcal
+Added Food Rootbeer with 190.00 kcal
+Added Activity Sleeping with 45.00 kcal
+Added Activity Sitting with 102.00 kcal
+Added Activity Biking with 340.00 kcal
+Added Activity Walking with 170.00 kcal
+Added Activity Swimming with 413.00 kcal
+Performed 1.00 hour(s) of Sitting, 102.00 kcal
+Performed 1.00 hour(s) of Biking, 340.00 kcal
+Performed 1.00 hour(s) of Sitting, 102.00 kcal
+Performed 1.00 hour(s) of Swimming, 413.00 kcal
+Ate 2.00 serving(s) of Cereal, 260.00 kcal
+Performed 0.25 hour(s) of Walking, 42.50 kcal
+Performed 5.00 hour(s) of Sitting, 510.00 kcal
+Ate 2.00 serving(s) of ChickenMeal, 1478.00 kcal
+Ate 1.00 serving(s) of Rootbeer, 190.00 kcal
+The specified food does not exist.
+The specified activity does not exist.
+Performed 2.00 hour(s) of Sitting, 204.00 kcal
+Performed 0.25 hour(s) of Walking, 42.50 kcal
+Performed 1.00 hour(s) of Biking, 340.00 kcal
+Performed 1.00 hour(s) of Sitting, 102.00 kcal
+Performed 1.00 hour(s) of Swimming, 413.00 kcal
+Ate 1.00 serving(s) of Ensaymada, 410.00 kcal
+Ate 1.00 serving(s) of Rootbeer, 190.00 kcal
+Added Food Strawberry with 39.00 kcal
+Number of servings cannot be negative.
+Updated Food Strawberry with 33.00 kcal
+Ate 2.00 serving(s) of Strawberry, 66.00 kcal
+Ate 1.00 serving(s) of ChickenMeal, 739.00 kcal
+Ate 1.50 serving(s) of Cereal, 195.00 kcal
+Performed 9.00 hour(s) of Sleeping, 405.00 kcal
+----------------
+LIFESTYLE REPORT
+----------------
+Food Consumed:
+2.00 serving(s) of Cereal, 260.00 kcal
+2.00 serving(s) of ChickenMeal, 1478.00 kcal
+1.00 serving(s) of Rootbeer, 190.00 kcal
+1.00 serving(s) of Ensaymada, 410.00 kcal
+1.00 serving(s) of Rootbeer, 190.00 kcal
+2.00 serving(s) of Strawberry, 66.00 kcal
+1.00 serving(s) of ChickenMeal, 739.00 kcal
+1.50 serving(s) of Cereal, 195.00 kcal
+----------------
+Total Calories Consumed: 3528.00 kcal
+----------------
+Activities Performed:
+1.00 hour(s) of Sitting, 102.00 kcal
+1.00 hour(s) of Biking, 340.00 kcal
+1.00 hour(s) of Sitting, 102.00 kcal
+1.00 hour(s) of Swimming, 413.00 kcal
+0.25 hour(s) of Walking, 42.50 kcal
+5.00 hour(s) of Sitting, 510.00 kcal
+2.00 hour(s) of Sitting, 204.00 kcal
+0.25 hour(s) of Walking, 42.50 kcal
+1.00 hour(s) of Biking, 340.00 kcal
+1.00 hour(s) of Sitting, 102.00 kcal
+1.00 hour(s) of Swimming, 413.00 kcal
+9.00 hour(s) of Sleeping, 405.00 kcal
+----------------
+Total Calories Burned: 3016.00 kcal
+----------------
+Net Calories for the Day: 512.00 kcal
+If you keep up this lifestyle...
+In a week, you will gain 0.46 kilograms.
+In a month, you will gain 1.99 kilograms.
+In 3 months, you will gain 5.97 kilograms.
+In 6 months, you will gain 11.94 kilograms.
+----------------
