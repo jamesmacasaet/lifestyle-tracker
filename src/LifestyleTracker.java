@@ -8,8 +8,8 @@ public class LifestyleTracker {
     private ArrayList<ActivitiesPerformed> activitiesPerformed = new ArrayList<>();
 
     public class FoodComsumed {
-        private Food food;
-        private double servings;
+        public Food food;
+        public double servings;
 
         public FoodComsumed(Food food, double servings) {
             this.food = food;
@@ -31,8 +31,8 @@ public class LifestyleTracker {
     }
 
     public class ActivitiesPerformed {
-        private Activity activity;
-        private double hours;
+        public Activity activity;
+        public double hours;
 
         public ActivitiesPerformed(Activity activity, double hours) {
             this.activity = activity;
