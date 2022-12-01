@@ -30,6 +30,7 @@ public class LifestyleTracker {
         return totalCalories;
     }
 
+
     public class ActivitiesPerformed {
         public Activity activity;
         public double hours;
@@ -51,6 +52,11 @@ public class LifestyleTracker {
             totalBurned += activitiesPerformed.get(i).activity.getActivityCalories() * activitiesPerformed.get(i).hours;
         }
         return totalBurned;
+    }
+
+    public double netCalories() {
+        //total calories - calories burned
+        return totalCalories() - totalBurned();
     }
 
     public String addFood(String n, double c) {
@@ -149,10 +155,12 @@ public class LifestyleTracker {
         return "";
 
         double totalBurned = this.totalBurned();
+        double netCalories = this.netCalories();
 
         System.out.println("----------------");
         System.out.println("Total Calories Burned: " + totalBurned + " kcal");
         System.out.println("----------------");
+        System.out.println("Net Calories for the Day: " + netCalories + " kcal");
 
        
 
