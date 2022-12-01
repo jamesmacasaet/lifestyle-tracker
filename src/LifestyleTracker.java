@@ -161,6 +161,8 @@ public class LifestyleTracker {
         System.out.println("Total Calories Burned: " + totalBurned + " kcal");
         System.out.println("----------------");
         System.out.println("Net Calories for the Day: " + netCalories + " kcal");
+        System.out.println("If you keep up this lifestyle...");
+        System.out.println("In a week, you will gain " + kilos + " kilograms.")
 
        
 
