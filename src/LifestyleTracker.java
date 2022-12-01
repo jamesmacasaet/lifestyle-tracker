@@ -20,6 +20,15 @@ public class LifestyleTracker {
             System.out.println(this.servings + " serving(s) of " + this.food.getFoodName() + ", "
                     + this.food.getFoodCalories() + " kcal");
         }
+        public double TotalCalories() {
+            double totalCalories = 0;
+            this.servings += 0;
+            for (int i = 0; i < foodConsumed.size(); i++) {
+                totalCalories += foodConsumed.get(i).food.getFoodCalories() * foodConsumed.get(i).servings;
+            }
+            
+            return totalCalories;
+        }
     }
 
     public class ActivitiesPerformed {
@@ -117,7 +126,7 @@ public class LifestyleTracker {
         }
 
         System.out.println("----------------");
-        System.out.println("Total Calories Consumed: sdasdasd");
+        System.out.println("Total Calories Consumed: " + totalCalories + " kcal");
         System.out.println("----------------");
         System.out.println("Activities Performed:");
 
