@@ -165,10 +165,7 @@ public class LifestyleTracker {
         System.out.println("In a month, you will gain " + kilos * 30 + " kilograms."); 
         System.out.println("In 3 months, you will gain " + kilos * 90 + " kilograms."); 
         System.out.println("In 6 months, you will gain " + kilos *  180 + " kilograms."); 
-
-
-       
-
     
+        return "";
     }
 }
