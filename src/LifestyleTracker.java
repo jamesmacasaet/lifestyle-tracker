@@ -20,15 +20,14 @@ public class LifestyleTracker {
             System.out.println(this.servings + " serving(s) of " + this.food.getFoodName() + ", "
                     + this.food.getFoodCalories() + " kcal");
         }
-        public double TotalCalories() {
-            double totalCalories = 0;
-            this.servings += 0;
-            for (int i = 0; i < foodConsumed.size(); i++) {
-                totalCalories += foodConsumed.get(i).food.getFoodCalories() * foodConsumed.get(i).servings;
-            }
-            
-            return totalCalories;
+    }
+
+    public double totalCalories() {
+        double totalCalories = 0;
+        for (int i = 0; i < foodConsumed.size(); i++) {
+            totalCalories += foodConsumed.get(i).food.getFoodCalories() * foodConsumed.get(i).servings;
         }
+        return totalCalories;
     }
 
     public class ActivitiesPerformed {
@@ -89,13 +88,16 @@ public class LifestyleTracker {
     public String eat(String foodName, double serving) {
         for (int i = 0; i < foodList.size(); i++) {
             Food current = foodList.get(i);
-            if (serving >= 0) {
-            if (current.getFoodName().equals(foodName)) {
-                foodConsumed.add(new FoodComsumed(current, serving));
-                return "Ate " + String.format("%.2f", serving) + " serving(s) of " + foodName + ", "
-                        + String.format("%.2f", current.getFoodCalories() * serving) + " kcal";
+            if (serving > 0) {
+                if (current.getFoodName().equals(foodName)) {
+                    foodConsumed.add(new FoodComsumed(current, serving));
+                    return "Ate " + String.format("%.2f", serving) + " serving(s) of " + foodName + ", "
+                            + String.format("%.2f", current.getFoodCalories() * serving) + " kcal";
+                } else {
+                    System.out.println("Number of servings cannot be negative.");
+                }
             } else {
-                System.out.println("Number of servings cannot be negative.");
+                return "Serverings cannot be negative";
             }
         }
 
@@ -124,6 +126,8 @@ public class LifestyleTracker {
         for (int i = 0; i < foodConsumed.size(); i++) {
             foodConsumed.get(i).report();
         }
+
+        double totalCalories = this.totalCalories();
 
         System.out.println("----------------");
         System.out.println("Total Calories Consumed: " + totalCalories + " kcal");
