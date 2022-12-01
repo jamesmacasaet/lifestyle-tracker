@@ -80,14 +80,17 @@ public class LifestyleTracker {
     public String eat(String foodName, double serving) {
         for (int i = 0; i < foodList.size(); i++) {
             Food current = foodList.get(i);
+            if (serving >= 0) {
             if (current.getFoodName().equals(foodName)) {
                 foodConsumed.add(new FoodComsumed(current, serving));
                 return "Ate " + String.format("%.2f", serving) + " serving(s) of " + foodName + ", "
                         + String.format("%.2f", current.getFoodCalories() * serving) + " kcal";
+            } else {
+                System.out.println("Number of servings cannot be negative.");
             }
         }
 
-        return "Food " + foodName + " not found.";
+        return "The specified food does not exist";
     }
 
     public String perform(String actName, double hours) {
@@ -100,7 +103,7 @@ public class LifestyleTracker {
             }
         }
 
-        return "Activity " + actName + " not found.";
+        return "The specified activity does not exist.";
     }
 
     public String report() {
