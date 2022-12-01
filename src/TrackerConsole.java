@@ -9,7 +9,7 @@ public class TrackerConsole {
         String command = "";
 
         while (true) {
-            command = in.nextLine();
+            command = in.nextLine().trim();
             if (command.equalsIgnoreCase("Report"))
                 break;
 
