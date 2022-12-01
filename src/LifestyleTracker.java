@@ -22,15 +22,6 @@ public class LifestyleTracker {
         }
     }
 
-    public double totalCalories() {
-        double totalCalories = 0;
-        for (int i = 0; i < foodConsumed.size(); i++) {
-            totalCalories += foodConsumed.get(i).food.getFoodCalories() * foodConsumed.get(i).servings;
-        }
-        return totalCalories;
-    }
-
-
     public class ActivitiesPerformed {
         public Activity activity;
         public double hours;
@@ -46,6 +37,14 @@ public class LifestyleTracker {
         }
     }
 
+    public double totalCalories() {
+        double totalCalories = 0;
+        for (int i = 0; i < foodConsumed.size(); i++) {
+            totalCalories += foodConsumed.get(i).food.getFoodCalories() * foodConsumed.get(i).servings;
+        }
+        return totalCalories;
+    }
+
     public double totalBurned() {
         double totalBurned = 0;
         for (int i = 0; i < activitiesPerformed.size(); i++) {
@@ -53,12 +52,6 @@ public class LifestyleTracker {
         }
         return totalBurned;
     }
-
-    public double netCalories() {
-        //total calories - calories burned
-        return totalCalories() - totalBurned();
-    }
-
 
     public String addFood(String n, double c) {
         boolean found = false;
@@ -101,18 +94,16 @@ public class LifestyleTracker {
     }
 
     public String eat(String foodName, double serving) {
+        if (serving <= 0) {
+            return "Serverings cannot be negative";
+        }
+
         for (int i = 0; i < foodList.size(); i++) {
             Food current = foodList.get(i);
-            if (serving > 0) {
-                if (current.getFoodName().equals(foodName)) {
-                    foodConsumed.add(new FoodComsumed(current, serving));
-                    return "Ate " + String.format("%.2f", serving) + " serving(s) of " + foodName + ", "
-                            + String.format("%.2f", current.getFoodCalories() * serving) + " kcal";
-                } else {
-                    System.out.println("Number of servings cannot be negative.");
-                }
-            } else {
-                return "Serverings cannot be negative";
+            if (current.getFoodName().equals(foodName)) {
+                foodConsumed.add(new FoodComsumed(current, serving));
+                return "Ate " + String.format("%.2f", serving) + " serving(s) of " + foodName + ", "
+                        + String.format("%.2f", current.getFoodCalories() * serving) + " kcal";
             }
         }
 
@@ -120,6 +111,10 @@ public class LifestyleTracker {
     }
 
     public String perform(String actName, double hours) {
+        if (hours <= 0) {
+            return "Hours cannot be negative";
+        }
+
         for (int i = 0; i < activityList.size(); i++) {
             Activity current = activityList.get(i);
             if (current.getActivityName().equals(actName)) {
@@ -153,26 +148,23 @@ public class LifestyleTracker {
             activitiesPerformed.get(i).report();
         }
 
-        return "";
-
-        
-
         double totalBurned = this.totalBurned();
-        double netCalories = totalCalories() - totalBurned();
-    
 
         System.out.println("----------------");
         System.out.println("Total Calories Burned: " + totalBurned + " kcal");
         System.out.println("----------------");
+
+        double netCalories = totalCalories - totalBurned;
+        double kilos = netCalories * 0.00012959782;
+
         System.out.println("Net Calories for the Day: " + netCalories + " kcal");
         System.out.println("If you keep up this lifestyle...");
 
-        System.out.println("In a week, you will gain " + totalCalories * 7 + " kilograms."); 
-        System.out.println("In a month, you will gain " + totalCalories * 30 + " kilograms."); 
-        System.out.println("In 3 months, you will gain " + totalCalories * 90 + " kilograms."); 
-        System.out.println("In 6 months, you will gain " + totalCalories *  180 + " kilograms."); 
-
-        
+        //im not sure about this yet i can't find a formula online HAHA
+        System.out.println("In a week, you will gain %.2f kilograms" + kilos * 7); 
+        System.out.println("In a month, you will gain " + kilos * 30 + " kilograms."); 
+        System.out.println("In 3 months, you will gain " + kilos * 90 + " kilograms."); 
+        System.out.println("In 6 months, you will gain " + kilos *  180 + " kilograms."); 
 
 
        
