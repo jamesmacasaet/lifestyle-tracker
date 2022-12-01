@@ -8,7 +8,7 @@ public class TrackerConsole {
         LifestyleTracker tracker = new LifestyleTracker();
 
         String command = in.next();
-
+        // sample change
         while (!command.equalsIgnoreCase("Report")) {
             if (command.equalsIgnoreCase("Food")) {
                 String name = in.next();
