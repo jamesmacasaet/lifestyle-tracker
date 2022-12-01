@@ -59,6 +59,7 @@ public class LifestyleTracker {
         return totalCalories() - totalBurned();
     }
 
+
     public String addFood(String n, double c) {
         boolean found = false;
 
@@ -154,6 +155,8 @@ public class LifestyleTracker {
 
         return "";
 
+        
+
         double totalBurned = this.totalBurned();
         double netCalories = this.netCalories();
 
@@ -162,7 +165,13 @@ public class LifestyleTracker {
         System.out.println("----------------");
         System.out.println("Net Calories for the Day: " + netCalories + " kcal");
         System.out.println("If you keep up this lifestyle...");
-        System.out.println("In a week, you will gain " + kilos + " kilograms.")
+
+        //im not sure about this yet i can't find a formula online HAHA
+        System.out.println("In a week, you will gain " + totalCalories * 7 + " kilograms."); 
+        System.out.println("In a month, you will gain " + totalCalories * 30 + " kilograms."); 
+        System.out.println("In 3 months, you will gain " + totalCalories * 90 + " kilograms."); 
+        System.out.println("In 6 months, you will gain " + totalCalories *  180 + " kilograms."); 
+
 
        
 
