@@ -62,7 +62,7 @@ public class LifestyleTracker {
                 current.updateCalories(c);
                 foodList.set(i, current);
                 found = true;
-                break;
+                return "Updated Food " + n + " with " + String.format("%.2f", c) + " kcal";
             }
         }
 
@@ -82,7 +82,7 @@ public class LifestyleTracker {
                 current.updateCalories(c);
                 activityList.set(i, current);
                 found = true;
-                break;
+                return "Updated Activity " + n + " with " + String.format("%.2f", c) + " kcal";
             }
         }
 
@@ -95,7 +95,7 @@ public class LifestyleTracker {
 
     public String eat(String foodName, double serving) {
         if (serving <= 0) {
-            return "Serverings cannot be negative";
+            return "Number of servings cannot be negative.";
         }
 
         for (int i = 0; i < foodList.size(); i++) {
@@ -112,7 +112,7 @@ public class LifestyleTracker {
 
     public String perform(String actName, double hours) {
         if (hours <= 0) {
-            return "Hours cannot be negative";
+            return "Number of hours cannot be negative.";
         }
 
         for (int i = 0; i < activityList.size(); i++) {
