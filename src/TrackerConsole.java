@@ -9,20 +9,20 @@ public class TrackerConsole {
 
         String command = in.next();
 
-        while (!command.equals("Report")) {
-            if (command.equals("Food")) {
+        while (!command.equalsIgnoreCase("Report")) {
+            if (command.equalsIgnoreCase("Food")) {
                 String name = in.next();
                 double calories = in.nextDouble();
                 System.out.println(tracker.addFood(name, calories));
-            } else if (command.equals("Activity")) {
+            } else if (command.equalsIgnoreCase("Activity")) {
                 String name = in.next();
                 double calories = in.nextDouble();
                 System.out.println(tracker.addActivity(name, calories));
-            } else if (command.equals("Eat")) {
+            } else if (command.equalsIgnoreCase("Eat")) {
                 String name = in.next();
                 double calories = in.nextDouble();
                 System.out.println(tracker.eat(name, calories));
-            } else if (command.equals("Perform")) {
+            } else if (command.equalsIgnoreCase("Perform")) {
                 String name = in.next();
                 double hours = in.nextDouble();
                 System.out.println(tracker.perform(name, hours));
