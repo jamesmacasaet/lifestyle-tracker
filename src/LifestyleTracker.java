@@ -45,6 +45,14 @@ public class LifestyleTracker {
         }
     }
 
+    public double totalBurned() {
+        double totalBurned = 0;
+        for (int i = 0; i < activitiesPerformed.size(); i++) {
+            totalBurned += activitiesPerformed.get(i).activity.getActivityCalories() * activitiesPerformed.get(i).hours;
+        }
+        return totalBurned;
+    }
+
     public String addFood(String n, double c) {
         boolean found = false;
 
@@ -139,6 +147,15 @@ public class LifestyleTracker {
         }
 
         return "";
-    }
 
+        double totalBurned = this.totalBurned();
+
+        System.out.println("----------------");
+        System.out.println("Total Calories Burned: " + totalBurned + " kcal");
+        System.out.println("----------------");
+
+       
+
+    
+    }
 }
