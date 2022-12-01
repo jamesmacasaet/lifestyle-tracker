@@ -18,7 +18,7 @@ public class LifestyleTracker {
 
         public void report() {
             System.out.println(this.servings + " serving(s) of " + this.food.getFoodName() + ", "
-                    + this.food.getFoodCalories() + " kcal");
+                    + (this.food.getFoodCalories() * this.servings) + " kcal");
         }
     }
 
@@ -33,7 +33,7 @@ public class LifestyleTracker {
 
         public void report() {
             System.out.println(this.hours + " hour(s) of " + this.activity.getActivityName() + ", "
-                    + this.activity.getActivityCalories() + " kcal");
+                    + (this.activity.getActivityCalories() * this.hours) + " kcal");
         }
     }
 
