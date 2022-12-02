@@ -1,5 +1,22 @@
-import java.util.ArrayList;
+/**
+@author James Emmanuelle D.G Macasaet (216712)
+@version December 2, 2022
+**/
+/*
+I have not discussed the Java language code in my program 
+with anyone other than my instructor or the teaching assistants 
+assigned to this course.
+I have not used Java language code obtained from another student, 
+or any other unauthorized source, either modified or unmodified.
+If any Java language code or documentation used in my program 
+was obtained from another source, such as a textbook or website, 
+that has been clearly noted with a proper citation in the comments 
+of my program.
+*/
 
+
+import java.util.ArrayList;
+import java.lang.Math;
 public class LifestyleTracker {
     private ArrayList<Food> foodList = new ArrayList<>();
     private ArrayList<Activity> activityList = new ArrayList<>();
@@ -155,16 +172,17 @@ public class LifestyleTracker {
         System.out.println("----------------");
 
         double netCalories = totalCalories - totalBurned;
+        String text = "gain";
+        if (netCalories < 0 ) text = "lose";
         double kilos = netCalories * 0.00012959782;
 
         System.out.println("Net Calories for the Day: " + netCalories + " kcal");
         System.out.println("If you keep up this lifestyle...");
 
-        //im not sure about this yet i can't find a formula online HAHA
-        System.out.println("In a week, you will gain %.2f kilograms" + kilos * 7); 
-        System.out.println("In a month, you will gain " + kilos * 30 + " kilograms."); 
-        System.out.println("In 3 months, you will gain " + kilos * 90 + " kilograms."); 
-        System.out.println("In 6 months, you will gain " + kilos *  180 + " kilograms."); 
+        System.out.printf("In a week, you will %s %.2f kilograms \n", text, Math.abs(kilos * 7)); 
+        System.out.printf("In a month, you will %s %.2f kilograms \n", text, Math.abs(kilos * 30)); 
+        System.out.printf("In 3 months, you will %s %.2f kilograms \n", text, Math.abs(kilos * 90)); 
+        System.out.printf("In 6 months, you will %s %.2f kilograms \n", text, Math.abs(kilos *  180)); 
     
         return "";
     }
