@@ -14,9 +14,9 @@ that has been clearly noted with a proper citation in the comments
 of my program.
 */
 
-
 import java.util.ArrayList;
 import java.lang.Math;
+
 public class LifestyleTracker {
     private ArrayList<Food> foodList = new ArrayList<>();
     private ArrayList<Activity> activityList = new ArrayList<>();
@@ -33,8 +33,8 @@ public class LifestyleTracker {
             this.servings = servings;
         }
 
-        public void report() {
-            System.out.println(this.servings + " serving(s) of " + this.food.getFoodName() + ", "
+        public String report() {
+            return (this.servings + " serving(s) of " + this.food.getFoodName() + ", "
                     + (this.food.getFoodCalories() * this.servings) + " kcal");
         }
     }
@@ -48,8 +48,8 @@ public class LifestyleTracker {
             this.hours = hours;
         }
 
-        public void report() {
-            System.out.println(this.hours + " hour(s) of " + this.activity.getActivityName() + ", "
+        public String report() {
+            return (this.hours + " hour(s) of " + this.activity.getActivityName() + ", "
                     + (this.activity.getActivityCalories() * this.hours) + " kcal");
         }
     }
@@ -151,7 +151,7 @@ public class LifestyleTracker {
         System.out.println("Food Consumed:");
 
         for (int i = 0; i < foodConsumed.size(); i++) {
-            foodConsumed.get(i).report();
+            System.out.println(i + 1 + ": " + foodConsumed.get(i).report());
         }
 
         double totalCalories = this.totalCalories();
@@ -162,7 +162,7 @@ public class LifestyleTracker {
         System.out.println("Activities Performed:");
 
         for (int i = 0; i < activitiesPerformed.size(); i++) {
-            activitiesPerformed.get(i).report();
+            System.out.println(i + 1 + ": " + activitiesPerformed.get(i).report());
         }
 
         double totalBurned = this.totalBurned();
@@ -173,17 +173,18 @@ public class LifestyleTracker {
 
         double netCalories = totalCalories - totalBurned;
         String text = "gain";
-        if (netCalories < 0 ) text = "lose";
+        if (netCalories < 0)
+            text = "lose";
         double kilos = netCalories * 0.00012959782;
 
         System.out.println("Net Calories for the Day: " + netCalories + " kcal");
         System.out.println("If you keep up this lifestyle...");
 
-        System.out.printf("In a week, you will %s %.2f kilograms \n", text, Math.abs(kilos * 7)); 
-        System.out.printf("In a month, you will %s %.2f kilograms \n", text, Math.abs(kilos * 30)); 
-        System.out.printf("In 3 months, you will %s %.2f kilograms \n", text, Math.abs(kilos * 90)); 
-        System.out.printf("In 6 months, you will %s %.2f kilograms \n", text, Math.abs(kilos *  180)); 
-    
+        System.out.printf("In a week, you will %s %.2f kilograms \n", text, Math.abs(kilos * 7));
+        System.out.printf("In a month, you will %s %.2f kilograms \n", text, Math.abs(kilos * 30));
+        System.out.printf("In 3 months, you will %s %.2f kilograms \n", text, Math.abs(kilos * 90));
+        System.out.printf("In 6 months, you will %s %.2f kilograms \n", text, Math.abs(kilos * 180));
+
         return "";
     }
 }
