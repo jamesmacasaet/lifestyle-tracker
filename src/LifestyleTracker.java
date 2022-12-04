@@ -183,6 +183,7 @@ public class LifestyleTracker {
         System.out.printf("In a month, you will %s %.2f kilograms \n", text, Math.abs(kilos * 30)); 
         System.out.printf("In 3 months, you will %s %.2f kilograms \n", text, Math.abs(kilos * 90)); 
         System.out.printf("In 6 months, you will %s %.2f kilograms \n", text, Math.abs(kilos *  180)); 
+        System.out.println("----------------");
     
         return "";
     }
