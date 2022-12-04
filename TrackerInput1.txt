@@ -12,12 +12,15 @@ Perform Biking 1
 Perform Sitting 1
 Perform Swimming 1
 
-Update_Food Cereal 150
-Update_Activity Sitting 200
+Update_Food Rootbeer Pizza 150
+Update_Activity Sitting Sleeping 200
+Update_Activity Sitting Standing 200
 Delete_Food Cereal
 Delete_Activity Bikin
 
 Eat Cereal 2
+Eat Rootbeer 1
+Eat Pizza 1
 Perform Walking 0.25
 Perform Sitting 5
 Eat ChickenMeal 2

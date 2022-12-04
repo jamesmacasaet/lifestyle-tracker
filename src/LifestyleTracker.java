@@ -70,43 +70,72 @@ public class LifestyleTracker {
         return totalBurned;
     }
 
+    public String updateFood(String oldName, String newName, double c) {
+        for (int i = 0; i < foodList.size(); i++) {
+            Food current = foodList.get(i);
+            if (current.getFoodName().equals(newName)) {
+                return "Food " + newName + " already exists";
+            }
+        }
+
+        for (int i = 0; i < foodList.size(); i++) {
+            Food current = foodList.get(i);
+            if (current.getFoodName().equals(oldName)) {
+                current.update(newName, c);
+                foodList.set(i, current);
+                return "Updated Food " + oldName + " with " + newName + String.format(" %.2f", c) + " kcal";
+            }
+        }
+
+        return "Food " + oldName + " does not exist and cannot be updated.";
+    }
+
+    public String updateActivity(String oldName, String newName, double c) {
+        for (int i = 0; i < activityList.size(); i++) {
+            Activity current = activityList.get(i);
+            if (current.getActivityName().equals(newName)) {
+                return "Activity " + newName + " already exists";
+            }
+        }
+
+        for (int i = 0; i < activityList.size(); i++) {
+            Activity current = activityList.get(i);
+            if (current.getActivityName().equals(oldName)) {
+                current.update(newName, c);
+                activityList.set(i, current);
+                return "Updated Activity " + oldName + " with " + newName + String.format(" %.2f", c) + " kcal";
+            }
+        }
+
+        return "Activity " + oldName + " does not exist and cannot be updated.";
+    }
+
     public String addFood(String n, double c) {
-        boolean found = false;
 
         for (int i = 0; i < foodList.size(); i++) {
             Food current = foodList.get(i);
             if (current.getFoodName().equals(n)) {
                 current.updateCalories(c);
                 foodList.set(i, current);
-                found = true;
                 return "Updated Food " + n + " with " + String.format("%.2f", c) + " kcal";
             }
         }
 
-        if (found == false) {
-            foodList.add(new Food(n, c));
-        }
-
+        foodList.add(new Food(n, c));
         return "Added Food " + n + " with " + String.format("%.2f", c) + " kcal";
     }
 
     public String addActivity(String n, double c) {
-        boolean found = false;
 
         for (int i = 0; i < activityList.size(); i++) {
             Activity current = activityList.get(i);
             if (current.getActivityName().equals(n)) {
                 current.updateCalories(c);
                 activityList.set(i, current);
-                found = true;
                 return "Updated Activity " + n + " with " + String.format("%.2f", c) + " kcal";
             }
         }
-
-        if (found == false) {
-            activityList.add(new Activity(n, c));
-        }
-
+        activityList.add(new Activity(n, c));
         return "Added Activity " + n + " with " + String.format("%.2f", c) + " kcal";
     }
 
@@ -124,7 +153,7 @@ public class LifestyleTracker {
             }
         }
 
-        return "The specified food does not exist";
+        return foodName + " does not exist";
     }
 
     public String perform(String actName, double hours) {
@@ -141,27 +170,31 @@ public class LifestyleTracker {
             }
         }
 
-        return "The specified activity does not exist.";
+        return "Activity " + actName + " does not exist.";
     }
 
-    public void deleteFood(String foodName) {
+    public String deleteFood(String foodName) {
+
         for (int i = 0; i < foodList.size(); i++) {
             Food current = foodList.get(i);
             if (current.getFoodName().equals(foodName)) {
                 foodList.remove(i);
-                break;
+                return "Deleted Food " + foodName;
             }
         }
+
+        return "There is no food named " + foodName;
     }
 
-    public void deleteActivity(String activityName) {
+    public String deleteActivity(String activityName) {
         for (int i = 0; i < activityList.size(); i++) {
             Activity current = activityList.get(i);
             if (current.getActivityName().equals(activityName)) {
                 activityList.remove(i);
-                break;
+                return "Deleted Activity " + activityName;
             }
         }
+        return "There is no activity named " + activityName;
     }
 
     public String report() {

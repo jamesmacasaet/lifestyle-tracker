@@ -33,6 +33,12 @@ public class Activity {
 
     }
 
+    public void update(String f, double c) {
+        name = f;
+        calories = c;
+    }
+
+
     public void updateCalories(double c) {
         calories = c;
     }

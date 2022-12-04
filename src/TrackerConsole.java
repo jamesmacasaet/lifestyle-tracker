@@ -54,6 +54,17 @@ public class TrackerConsole {
                 double amount = Double.parseDouble(parts[2]);
                 System.out.println(tracker.perform(name, amount));
             } else if (action.equalsIgnoreCase("Delete_Food")) {
+                System.out.println(tracker.deleteFood(name));
+            } else if (action.equalsIgnoreCase("Delete_Activity")) {
+                System.out.println(tracker.deleteActivity(name));
+            } else if (action.equalsIgnoreCase("Update_Food")) {
+                String newName = parts[2];
+                double amount = Double.parseDouble(parts[3]);
+                System.out.println(tracker.updateFood(name, newName, amount));
+            } else if (action.equalsIgnoreCase("Update_Activity")){
+                String newName = parts[2];
+                double amount = Double.parseDouble(parts[3]);
+                System.out.println(tracker.updateActivity(name, newName, amount));
             }
         }
 
