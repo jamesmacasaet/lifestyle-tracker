@@ -55,10 +55,12 @@ public class LifestyleTracker {
     }
 
     public double totalCalories() {
+
         double totalCalories = 0;
         for (int i = 0; i < foodConsumed.size(); i++) {
             totalCalories += foodConsumed.get(i).food.getFoodCalories() * foodConsumed.get(i).servings;
         }
+
         return totalCalories;
     }
 
@@ -67,6 +69,7 @@ public class LifestyleTracker {
         for (int i = 0; i < activitiesPerformed.size(); i++) {
             totalBurned += activitiesPerformed.get(i).activity.getActivityCalories() * activitiesPerformed.get(i).hours;
         }
+
         return totalBurned;
     }
 
@@ -204,7 +207,7 @@ public class LifestyleTracker {
         System.out.println("Food Consumed:");
 
         for (int i = 0; i < foodConsumed.size(); i++) {
-            System.out.println(i + 1 + ": " + foodConsumed.get(i).report());
+            System.out.println(foodConsumed.get(i).report());
         }
 
         double totalCalories = this.totalCalories();
@@ -215,7 +218,7 @@ public class LifestyleTracker {
         System.out.println("Activities Performed:");
 
         for (int i = 0; i < activitiesPerformed.size(); i++) {
-            System.out.println(i + 1 + ": " + activitiesPerformed.get(i).report());
+            System.out.println(activitiesPerformed.get(i).report());
         }
 
         double totalBurned = this.totalBurned();

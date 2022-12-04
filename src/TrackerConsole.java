@@ -12,6 +12,10 @@ If any Java language code or documentation used in my program
 was obtained from another source, such as a textbook or website, 
 that has been clearly noted with a proper citation in the comments 
 of my program.
+
+W3Schools. (n.d.). Java try-catch. Retrieved from
+https://www.w3schools.com/java/java_try_catch.asp
+
 */
 
 import java.util.ArrayList;
@@ -33,8 +37,7 @@ public class TrackerConsole {
                 commands.add(command);
         }
 
-        System.out.println();
-        System.out.println("Welcome to " + username + "'s Lifestyle Tracker!");
+        System.out.println("\nWelcome to " + username + "'s Lifestyle Tracker!");
 
         for (int i = 0; i < commands.size(); i++) {
             String[] parts = commands.get(i).split(" ");
