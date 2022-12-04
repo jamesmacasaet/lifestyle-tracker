@@ -11,6 +11,12 @@ Perform Sitting 1
 Perform Biking 1
 Perform Sitting 1
 Perform Swimming 1
+
+Update_Food Cereal 150
+Update_Activity Sitting 200
+Delete_Food Cereal
+Delete_Activity Bikin
+
 Eat Cereal 2
 Perform Walking 0.25
 Perform Sitting 5

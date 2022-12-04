@@ -144,6 +144,26 @@ public class LifestyleTracker {
         return "The specified activity does not exist.";
     }
 
+    public void deleteFood(String foodName) {
+        for (int i = 0; i < foodList.size(); i++) {
+            Food current = foodList.get(i);
+            if (current.getFoodName().equals(foodName)) {
+                foodList.remove(i);
+                break;
+            }
+        }
+    }
+
+    public void deleteActivity(String activityName) {
+        for (int i = 0; i < activityList.size(); i++) {
+            Activity current = activityList.get(i);
+            if (current.getActivityName().equals(activityName)) {
+                activityList.remove(i);
+                break;
+            }
+        }
+    }
+
     public String report() {
         System.out.println("----------------");
         System.out.println("LIFESTYLE REPORT");

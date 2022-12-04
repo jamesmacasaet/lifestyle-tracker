@@ -51,7 +51,7 @@ public class TrackerConsole {
                 System.out.println(tracker.eat(name, amount));
             } else if (action.equalsIgnoreCase("Perform")) {
                 System.out.println(tracker.perform(name, amount));
-            }
+            } 
         }
 
         tracker.report();

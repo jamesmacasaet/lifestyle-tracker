@@ -23,6 +23,11 @@ public class Food {
         calories = c;
     }
 
+    public void update(String f, double c) {
+        name = f;
+        calories = c;
+    }
+
     public String getFoodName() {
         return name;
     }
