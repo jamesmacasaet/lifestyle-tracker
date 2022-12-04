@@ -14,7 +14,6 @@ that has been clearly noted with a proper citation in the comments
 of my program.
 */
 
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -41,17 +40,21 @@ public class TrackerConsole {
             String[] parts = commands.get(i).split(" ");
             String action = parts[0];
             String name = parts[1];
-            double amount = Double.parseDouble(parts[2]);
 
             if (action.equalsIgnoreCase("Food")) {
+                double amount = Double.parseDouble(parts[2]);
                 System.out.println(tracker.addFood(name, amount));
             } else if (action.equalsIgnoreCase("Activity")) {
+                double amount = Double.parseDouble(parts[2]);
                 System.out.println(tracker.addActivity(name, amount));
             } else if (action.equalsIgnoreCase("Eat")) {
+                double amount = Double.parseDouble(parts[2]);
                 System.out.println(tracker.eat(name, amount));
             } else if (action.equalsIgnoreCase("Perform")) {
+                double amount = Double.parseDouble(parts[2]);
                 System.out.println(tracker.perform(name, amount));
-            } 
+            } else if (action.equalsIgnoreCase("Delete_Food")) {
+            }
         }
 
         tracker.report();
